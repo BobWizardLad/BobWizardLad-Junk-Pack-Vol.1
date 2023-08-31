@@ -5,3 +5,4 @@
 [node name="World" type="Node2D"]
 
 [node name="Unit" parent="." instance=ExtResource("1_gvw1h")]
+position = Vector2(98, 89)
