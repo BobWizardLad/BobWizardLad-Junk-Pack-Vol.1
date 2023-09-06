@@ -12,7 +12,7 @@ public partial class Unit : Node2D
 	public override void _Ready() {
 		HealthLabelPath = new NodePath("Label");
 		HealthLabel = (Label)GetNodeOrNull(HealthLabelPath);
-		HealthPath = new NodePath("Label");
+		HealthPath = new NodePath("HealthComp");
 		Health = (HealthComponent)GetNodeOrNull(HealthPath);
 	}
 
@@ -20,5 +20,10 @@ public partial class Unit : Node2D
 	public override void _Process(double delta) {
 		Console.Out.WriteLine(Health.Get_Hitpoints().ToString());
 		HealthLabel.Text = Health.Get_Hitpoints().ToString();
+	}
+
+	// Oof [THIS IS A TEST CODE]
+	public void _OofButton() {
+		Health.Mod_Hitpoints(-15);
 	}
 }

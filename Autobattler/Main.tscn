@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://0pj5en56kc8r"]
+
+[ext_resource type="PackedScene" uid="uid://bbk8pixxnknb0" path="res://unit.tscn" id="1_gvw1h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Unit" parent="." instance=ExtResource("1_gvw1h")]
+position = Vector2(98, 89)
+
+[node name="Unit2" parent="." instance=ExtResource("1_gvw1h")]
+position = Vector2(100, 216)
+
+[node name="Unit3" parent="." instance=ExtResource("1_gvw1h")]
+position = Vector2(134, 146)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 177.0
+offset_top = 59.0
+offset_right = 273.0
+offset_bottom = 95.0
+text = "OOF"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 188.0
+offset_top = 207.0
+offset_right = 284.0
+offset_bottom = 243.0
+text = "OOF"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 206.0
+offset_top = 132.0
+offset_right = 302.0
+offset_bottom = 168.0
+text = "OOF"
+
+[connection signal="pressed" from="Button" to="Unit" method="_OofButton"]
+[connection signal="pressed" from="Button2" to="Unit2" method="_OofButton"]
+[connection signal="pressed" from="Button3" to="Unit3" method="_OofButton"]
