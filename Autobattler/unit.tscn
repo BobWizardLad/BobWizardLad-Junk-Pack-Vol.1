@@ -15,12 +15,14 @@ hframes = 10
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("2_kdsr1")
 
+[node name="AttackComponent" type="Node2D" parent="."]
+script = ExtResource("4_poj6a")
+
+[node name="RayCast2D" type="RayCast2D" parent="AttackComponent"]
+
 [node name="Label" type="Label" parent="."]
 offset_left = -18.0
 offset_top = -38.0
 offset_right = 21.0
 offset_bottom = -12.0
 horizontal_alignment = 1
-
-[node name="AttackComponent" type="Node2D" parent="."]
-script = ExtResource("4_poj6a")
