@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://0pj5en56kc8r"]
+[gd_scene load_steps=3 format=3 uid="uid://0pj5en56kc8r"]
 
+[ext_resource type="Script" path="res://Game.cs" id="1_3akmx"]
 [ext_resource type="PackedScene" uid="uid://bbk8pixxnknb0" path="res://unit.tscn" id="1_gvw1h"]
 
 [node name="Game" type="Node2D"]
 rotation = -0.000275491
+script = ExtResource("1_3akmx")
 
 [node name="Unit" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(102.978, 80.0284)
