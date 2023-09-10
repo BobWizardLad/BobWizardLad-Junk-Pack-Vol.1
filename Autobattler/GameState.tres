@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d1t1krc8ghsuv"]
+
+[ext_resource type="Script" path="res://GameState.cs" id="1_pcrvm"]
+
+[resource]
+script = ExtResource("1_pcrvm")

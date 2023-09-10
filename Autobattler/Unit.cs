@@ -1,23 +1,28 @@
 using Godot;
 using System;
 
-public partial class Unit : Node2D
-{
-	private Label HealthLabel;
-
+public partial class Unit : Node2D {
+	// Node/Resource references
+	private Label healthLabel;
 	[Export]
-	protected int hitpoints = 100;
-	[Export]
+	private GameState gameState;
+	
+	// Const
 	private const int MAX_HITPOINTS = 100;
+
+	// Mutables
+	[Export]
+	private int hitpoints = 100;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
-		HealthLabel = (Label)GetNodeOrNull(new NodePath("Label"));
+		// Connect resources and nodes
+		healthLabel = (Label)GetNodeOrNull(new NodePath("Label"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-		HealthLabel.Text = Get_Hitpoints().ToString();
+		healthLabel.Text = Get_Hitpoints().ToString();
 	}
 
 	// -- HEALTH --
@@ -45,7 +50,6 @@ public partial class Unit : Node2D
 		return hitpoints;
 	}
 
-
 	// -- GETTERS --
 
 	// Getter for hitpoints
@@ -53,8 +57,4 @@ public partial class Unit : Node2D
 		return hitpoints;
 	}
 
-	// Oof [THIS IS A TEST CODE]
-	public void _OofButton() {
-		Mod_Hitpoints(-15);
-	}
 }

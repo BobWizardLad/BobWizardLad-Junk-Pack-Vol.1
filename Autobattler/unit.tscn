@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbk8pixxnknb0"]
+[gd_scene load_steps=4 format=3 uid="uid://bbk8pixxnknb0"]
 
 [ext_resource type="Script" path="res://Unit.cs" id="1_juu3m"]
 [ext_resource type="Texture2D" uid="uid://c3mta7ksruy7l" path="res://Asset Packs 1-3 (final)/Asset Pack-V1/Sprite Sheets/Character Idle 48x48.png" id="1_nfatv"]
+[ext_resource type="Resource" uid="uid://d1t1krc8ghsuv" path="res://GameState.tres" id="2_h5hbn"]
 
 [node name="Unit" type="Node2D"]
 script = ExtResource("1_juu3m")
+gameState = ExtResource("2_h5hbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nfatv")
