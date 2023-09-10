@@ -4,25 +4,57 @@ using System;
 public partial class Unit : Node2D
 {
 	private Label HealthLabel;
-	private HealthComponent Health;
+
+	[Export]
+	protected int hitpoints = 100;
+	[Export]
+	private const int MAX_HITPOINTS = 100;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		HealthLabel = (Label)GetNodeOrNull(new NodePath("Label"));
-		Health = (HealthComponent)GetNodeOrNull(new NodePath("HealthComponent"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-		HealthLabel.Text = Health.Get_Hitpoints().ToString();
+		HealthLabel.Text = Get_Hitpoints().ToString();
 	}
 
-	public HealthComponent GetHealthComponent() {
-		return Health;
+	// -- HEALTH --
+
+	// Set hitpoints to value, always bounded by MAX_HITPOINTS and zero
+	public void Set_Hitpoints(int value) {
+		if(value > MAX_HITPOINTS) {
+			hitpoints = MAX_HITPOINTS;
+		} else if(value < 0) {
+			hitpoints = 0;
+		} else {
+			hitpoints = value;
+		}
+	}
+
+	// Modify HP by value, always bounded by MAX_HITPOINTS and zero
+	public int Mod_Hitpoints(int value) {
+		if(value + hitpoints > MAX_HITPOINTS) {
+			hitpoints = MAX_HITPOINTS;
+		} else if(value + hitpoints < 0) {
+			hitpoints = 0;
+		} else {
+			hitpoints += value;
+		}
+		return hitpoints;
+	}
+
+
+	// -- GETTERS --
+
+	// Getter for hitpoints
+	public int Get_Hitpoints() {
+		return hitpoints;
 	}
 
 	// Oof [THIS IS A TEST CODE]
 	public void _OofButton() {
-		Health.Mod_Hitpoints(-15);
+		Mod_Hitpoints(-15);
 	}
 }
