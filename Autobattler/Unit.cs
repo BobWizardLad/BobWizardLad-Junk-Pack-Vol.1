@@ -1,11 +1,10 @@
 using Godot;
 using System;
+using static GameState;
 
 public partial class Unit : Node2D {
 	// Node/Resource references
 	private Label healthLabel;
-	[Export]
-	private GameState gameState;
 	
 	// Const
 	private const int MAX_HITPOINTS = 100;
@@ -22,7 +21,7 @@ public partial class Unit : Node2D {
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-		healthLabel.Text = Get_Hitpoints().ToString();
+		healthLabel.Text = GameState.funNum.ToString();//Get_Hitpoints().ToString();
 	}
 
 	// -- HEALTH --

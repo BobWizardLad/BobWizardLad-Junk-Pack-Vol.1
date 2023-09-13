@@ -1,24 +1,26 @@
 using Godot;
 using System;
 
-public partial class GameState : Resource {
-    private Node2D[] PlayerTeam = new Node2D[3];
-    private Node2D[] EnemyTeam = new Node2D[3];
+public static class GameState : Object {
+    private static Node2D[] PlayerTeam = new Node2D[3];
+    private static Node2D[] EnemyTeam = new Node2D[3];
+
+    public static int funNum;
 
     // Loads a new team of units into the player's array.
     // Requires a complete array of units to load.
     // Will only take the first three units in an oversized list.
-    public void loadTeam(Node2D[] Units) {
+    public static void loadTeam(Node2D[] Units) {
         for(int i = 0; i < 3; i++) {
             PlayerTeam[i] = Units[i];
         }
     }
 
-    public Node2D[] GetPlayerTeam() {
+    public static Node2D[] GetPlayerTeam() {
         return PlayerTeam;
     }
 
-    public Node2D[] GetEnemyTeam() {
+    public static Node2D[] GetEnemyTeam() {
         return EnemyTeam;
     }
 }

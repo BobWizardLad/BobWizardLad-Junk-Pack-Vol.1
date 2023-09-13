@@ -1,11 +1,12 @@
 using Godot;
 using System;
+using static GameState;
 
 public partial class Game : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
-
+		GameState.funNum = 69;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
