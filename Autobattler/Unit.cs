@@ -2,6 +2,7 @@ using Godot;
 using System;
 using static GameState;
 
+[GlobalClass]
 public partial class Unit : Node2D {
 	// Node/Resource references
 	private Label healthLabel;
@@ -21,7 +22,7 @@ public partial class Unit : Node2D {
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-		healthLabel.Text = GameState.funNum.ToString();//Get_Hitpoints().ToString();
+		Get_Hitpoints().ToString();
 	}
 
 	// -- HEALTH --

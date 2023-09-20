@@ -16,11 +16,17 @@ position = Vector2(102.954, 167.028)
 [node name="Unit3" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(103.93, 255.029)
 
-[node name="Unit4" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Enemy" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(327.977, 82.0904)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="Unit5" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Enemy2" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(327.953, 169.09)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
-[node name="Unit6" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Enemy3" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(328.929, 257.091)
+rotation = -3.14159
+scale = Vector2(1, -1)
