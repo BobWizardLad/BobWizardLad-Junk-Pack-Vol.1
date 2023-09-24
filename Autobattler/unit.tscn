@@ -16,3 +16,8 @@ offset_top = -38.0
 offset_right = 21.0
 offset_bottom = -12.0
 horizontal_alignment = 1
+
+[node name="AtkTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="AtkTimer" to="." method="OnAtkTimeout"]

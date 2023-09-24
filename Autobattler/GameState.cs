@@ -21,10 +21,10 @@ public static class GameState : Object {
         GD.Print(BlueTeam);
     }
 
-    public static Node[] GetRedTeam() {
-        return RedTeam;
+    public static Unit GetRedTeam(int index) {
+        return (Unit)RedTeam[index];
     }
-    public static Node[] GetBlueTeam() {
-        return BlueTeam;
+    public static Unit GetBlueTeam(int index) {
+        return (Unit)BlueTeam[index];
     }
 }

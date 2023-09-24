@@ -7,29 +7,40 @@
 rotation = -0.000275491
 script = ExtResource("1_3akmx")
 
-[node name="Unit" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Pawns" type="Node2D" parent="."]
+
+[node name="Unit" parent="Pawns" instance=ExtResource("1_gvw1h")]
 position = Vector2(102.978, 80.0284)
 
-[node name="Unit2" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Unit2" parent="Pawns" instance=ExtResource("1_gvw1h")]
 position = Vector2(102.954, 167.028)
 
-[node name="Unit3" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Unit3" parent="Pawns" instance=ExtResource("1_gvw1h")]
 position = Vector2(103.93, 255.029)
 
-[node name="Enemy" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Enemy" parent="Pawns" instance=ExtResource("1_gvw1h")]
 position = Vector2(327.977, 82.0904)
 rotation = -3.14159
 scale = Vector2(1, -1)
 team = 1
 
-[node name="Enemy2" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Enemy2" parent="Pawns" instance=ExtResource("1_gvw1h")]
 position = Vector2(327.953, 169.09)
 rotation = -3.14159
 scale = Vector2(1, -1)
 team = 1
 
-[node name="Enemy3" parent="." instance=ExtResource("1_gvw1h")]
+[node name="Enemy3" parent="Pawns" instance=ExtResource("1_gvw1h")]
 position = Vector2(328.929, 257.091)
 rotation = -3.14159
 scale = Vector2(1, -1)
 team = 1
+
+[node name="Start" type="Button" parent="."]
+offset_left = 399.96
+offset_top = 144.11
+offset_right = 631.96
+offset_bottom = 199.11
+text = "Start"
+
+[connection signal="pressed" from="Start" to="." method="GameStart"]
