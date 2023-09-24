@@ -1,14 +1,32 @@
 using Godot;
 using System;
 
+<<<<<<< Updated upstream
 public partial class Unit : Node2D
 {
 	private Label HealthLabel;
+=======
+[GlobalClass]
+public partial class Unit : Node2D {
+	// Node/Resource references
+	private Label healthLabel;
+	
+	// Const
+	private const int MAX_HITPOINTS = 100;
+	enum Team {Blue, Red}
+
+>>>>>>> Stashed changes
 
 	[Export]
+<<<<<<< Updated upstream
 	protected int hitpoints = 100;
 	[Export]
 	private const int MAX_HITPOINTS = 100;
+=======
+	private int hitpoints = 100;
+	[Export]
+	private int team = Team.Blue;
+>>>>>>> Stashed changes
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
