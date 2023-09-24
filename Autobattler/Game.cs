@@ -7,7 +7,7 @@ using static GameState;
 
 public partial class Game : Node2D
 {
-	private Node[] unitNodes = new Node[6];
+	private Node[] unitNodes = new Node[3];
 	private int x;
 
 	// Called when the node enters the scene tree for the first time.
@@ -16,14 +16,23 @@ public partial class Game : Node2D
 		x = 0;
 		Godot.Collections.Array<Godot.Node> children = GetChildren();
 
-		// Iterate through the children and sort into list
-        foreach (Node child in children) {
-			if (child is Unit) {
+		// Load all units to GameState
+        foreach (Unit child in children) {
+			if (child.GetTeam() == 1) {
 				unitNodes[x] = child;
 				x = x + 1;
 			}
 		}
-		GameState.loadTeam(unitNodes);
+		GameState.LoadRedTeam(unitNodes);
+		x = 0;
+		unitNodes = new Node[3];
+		foreach (Unit child in children) {
+			if (child.GetTeam() == 0) {
+				unitNodes[x] = child;
+				x = x + 1;
+			}
+		}
+		GameState.LoadBlueTeam(unitNodes);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

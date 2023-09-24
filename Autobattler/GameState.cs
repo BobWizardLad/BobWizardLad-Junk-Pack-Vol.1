@@ -2,19 +2,29 @@ using Godot;
 using System;
 
 public static class GameState : Object {
-    private static Node[] GameUnits = new Node[6];
+    private static Node[] BlueTeam = new Node[3];
+    private static Node[] RedTeam = new Node[3];
 
-    // Loads a new team of units into the player's array.
+    // Loads a new team of units into a team's array.
     // Requires a complete array of units to load.
     // Will only take the first three units in an oversized list.
-    public static void loadTeam(Node[] Units) {
-        for(int i = 0; i < 6; i++) {
-            GameUnits[i] = Units[i];
+    public static void LoadRedTeam(Node[] Units) {
+        for(int i = 0; i < 3; i++) {
+            RedTeam[i] = Units[i];
         }
-        GD.Print(GameUnits);
+        GD.Print(RedTeam);
+    }
+    public static void LoadBlueTeam(Node[] Units) {
+        for(int i = 0; i < 3; i++) {
+            BlueTeam[i] = Units[i];
+        }
+        GD.Print(BlueTeam);
     }
 
-    public static Node[] GetGameUnits() {
-        return GameUnits;
+    public static Node[] GetRedTeam() {
+        return RedTeam;
+    }
+    public static Node[] GetBlueTeam() {
+        return BlueTeam;
     }
 }

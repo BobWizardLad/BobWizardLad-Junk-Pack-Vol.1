@@ -20,13 +20,16 @@ position = Vector2(103.93, 255.029)
 position = Vector2(327.977, 82.0904)
 rotation = -3.14159
 scale = Vector2(1, -1)
+team = 1
 
 [node name="Enemy2" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(327.953, 169.09)
 rotation = -3.14159
 scale = Vector2(1, -1)
+team = 1
 
 [node name="Enemy3" parent="." instance=ExtResource("1_gvw1h")]
 position = Vector2(328.929, 257.091)
 rotation = -3.14159
 scale = Vector2(1, -1)
+team = 1

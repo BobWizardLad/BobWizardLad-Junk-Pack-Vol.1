@@ -9,10 +9,13 @@ public partial class Unit : Node2D {
 	
 	// Const
 	private const int MAX_HITPOINTS = 100;
+	enum Team {Blue, Red}
 
 	// Mutables
 	[Export]
 	private int hitpoints = 100;
+	[Export]
+	private Team team = Team.Blue;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -22,7 +25,7 @@ public partial class Unit : Node2D {
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-		Get_Hitpoints().ToString();
+		healthLabel.Text = GetHitpoints().ToString();
 	}
 
 	// -- HEALTH --
@@ -53,8 +56,12 @@ public partial class Unit : Node2D {
 	// -- GETTERS --
 
 	// Getter for hitpoints
-	public int Get_Hitpoints() {
+	public int GetHitpoints() {
 		return hitpoints;
+	}
+
+	public int GetTeam() {
+		return (int)team;
 	}
 
 }
